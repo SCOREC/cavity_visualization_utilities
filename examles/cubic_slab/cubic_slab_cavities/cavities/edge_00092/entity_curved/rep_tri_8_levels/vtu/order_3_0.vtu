@@ -1,0 +1,22 @@
+<VTKFile type="UnstructuredGrid">
+<UnstructuredGrid>
+<Piece NumberOfPoints="0" NumberOfCells="0">
+<Points>
+<DataArray type="Float64" Name="coordinates" NumberOfComponents="3" format="ascii">
+</DataArray>
+</Points>
+<Cells>
+<DataArray type="Int32" Name="connectivity" format="ascii">
+</DataArray>
+<DataArray type="Int32" Name="offsets" format="ascii">
+</DataArray>
+<DataArray type="UInt8" Name="types" format="ascii">
+</DataArray>
+</Cells>
+<PointData>
+<DataArray type="Float64" Name="detJacobian" NumberOfComponents="1" format="ascii">
+</DataArray>
+</PointData>
+</Piece>
+</UnstructuredGrid>
+</VTKFile>

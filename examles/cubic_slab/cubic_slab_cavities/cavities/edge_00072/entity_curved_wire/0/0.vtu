@@ -1,0 +1,29 @@
+<VTKFile type="UnstructuredGrid" byte_order="LittleEndian" header_type="UInt32">
+<UnstructuredGrid>
+<Piece NumberOfPoints="9" NumberOfCells="8">
+<Points>
+<DataArray type="Float64" Name="coordinates" NumberOfComponents="3" format="binary">
+2AAAAA==VUHXPnPaFD8AAAAAAAAAAKRI2/aelrm/8ONkdgmMEj9QH8U6MXRJPE9tWVmMLLi/noufSm73Dz+w8MmEYdFVPABTxZkOmra/HvhG8uh+Cj+4SbH02EVbPAhkesOe7LS/njfXPnPaBD9mwZMrfRddPLwK1OG1MbO/tujOFvtr/j5afuxnTEZbPHCxLQDNdrG/JrEdZvB68z43pzboRNJVPO6ExVO6kq+/DTqSQ05z4j4/xdrVyXZJPE5QndS+bay/zDHoBRDMn7yXRnO96KqaO6SZmZmZmam/
+</DataArray>
+</Points>
+<Cells>
+<DataArray type="Int32" Name="connectivity" format="binary">
+QAAAAA==AAAAAAEAAAABAAAAAgAAAAIAAAADAAAAAwAAAAQAAAAEAAAABQAAAAUAAAAGAAAABgAAAAcAAAAHAAAACAAAAA==
+</DataArray>
+<DataArray type="Int32" Name="offsets" format="binary">
+IAAAAA==AgAAAAQAAAAGAAAACAAAAAoAAAAMAAAADgAAABAAAAA=
+</DataArray>
+<DataArray type="UInt8" Name="types" format="binary">
+CAAAAA==AwMDAwMDAwM=
+</DataArray>
+</Cells>
+<PointData>
+</PointData>
+<CellData>
+<DataArray type="Int32" Name="apf_part" NumberOfComponents="1" format="binary">
+IAAAAA==AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+</DataArray>
+</CellData>
+</Piece>
+</UnstructuredGrid>
+</VTKFile>
