@@ -1,8 +1,8 @@
 import sys, argparse, os, glob
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-r', '--root_dir', help="root directory of all cavities")
-parser.add_argument('-c', '--cavity_name', help="the specific cavity name")
+parser.add_argument('-r', '--root_dir', type=str, help="root directory of all cavities", required=True)
+parser.add_argument('-c', '--cavity_name', type=str, help="the specific cavity name", required=True)
 parser.add_argument('-p', '--save_png', help="saves a png of the view", action="store_true")
 parser.add_argument('-m', '--show_mesh', help="show mesh", action="store_true")
 args = parser.parse_args()
