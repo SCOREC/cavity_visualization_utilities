@@ -138,24 +138,26 @@ renderView1 = GetActiveViewOrCreate('RenderView')
 # uncomment following to set a specific view size
 # renderView1.ViewSize = [1994, 1260]
 
-if args.show_mesh:
-  # create a new 'XML Unstructured Grid Reader'
-  order_3_0vtu = XMLUnstructuredGridReader(FileName=[mesh_path])
-  order_3_0vtu.PointArrayStatus = ['detJacobian']
-  # show data in view
-  order_3_0vtuDisplay = Show(order_3_0vtu, renderView1)
-  # trace defaults for the display properties.
-  order_3_0vtuDisplay.ColorArrayName = [None, '']
-  order_3_0vtuDisplay.DiffuseColor = [1,1,1]
-  order_3_0vtuDisplay.EdgeColor = [0.0, 0.0, 0.2]
-  order_3_0vtuDisplay.BackfaceDiffuseColor = [1,1,1]
-  order_3_0vtuDisplay.ScalarOpacityUnitDistance = 0.05
+# create a new 'XML Unstructured Grid Reader'
+order_3_0vtu = XMLUnstructuredGridReader(FileName=[mesh_path])
+order_3_0vtu.PointArrayStatus = ['detJacobian']
+# show data in view
+order_3_0vtuDisplay = Show(order_3_0vtu, renderView1)
+# trace defaults for the display properties.
+order_3_0vtuDisplay.ColorArrayName = [None, '']
+order_3_0vtuDisplay.DiffuseColor = [1,1,1]
+order_3_0vtuDisplay.EdgeColor = [0.0, 0.0, 0.2]
+order_3_0vtuDisplay.BackfaceDiffuseColor = [1,1,1]
+order_3_0vtuDisplay.ScalarOpacityUnitDistance = 0.05
 
-  # reset view to fit data
-  renderView1.ResetCamera()
+# reset view to fit data
+renderView1.ResetCamera()
 
-  # Properties modified on order_3_0vtuDisplay
-  order_3_0vtuDisplay.Opacity = 0.05
+# Properties modified on order_3_0vtuDisplay
+order_3_0vtuDisplay.Opacity = 0.05
+
+if not args.show_mesh:
+  Hide(order_3_0vtu, renderView1)
 
 # create a new 'XML Unstructured Grid Reader'
 order_3_0vtu_1 = XMLUnstructuredGridReader(FileName=[cavity_path])
