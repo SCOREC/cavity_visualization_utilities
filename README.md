@@ -76,3 +76,7 @@ pvpython path_to/show_curved_cavity.py -r path_to/examples/cubic_slab_cubic_slab
 ```
 
 The first one only shows the cavity in the RenderView, the second one shows the cavity and the whole mesh in the RenderView, and the last one shows both the cavity and the mesh in the RenderView and saves a png with name `edge_00092.png` of the RenderView before any interactions (i.e., before any rotation or translation of the Camera by the user).
+
+Example pngs created for `edge_00092` and `vertex_00026` are as follwos
+![example_pic](https://user-images.githubusercontent.com/1325140/165379629-97b7ab34-6f34-4e4b-860e-09ff45d91ac7.png)
+
