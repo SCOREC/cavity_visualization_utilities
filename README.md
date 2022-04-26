@@ -41,11 +41,13 @@ The output of above call would be stored under a directory named `prefix` with t
 
 ```
  prefix
-   ├── cavities
+ ├── cavities
  │ ├── edge_nnnnn
- │  ├── vertex_nnnnn
- │  └── triangle_nnnnn
+ │ ├── vertex_nnnnn
+ │ └── triangle_nnnnn
  └── mesh
 ```
+
+where the subdirectory `cavities` contains all the cavites created by the utility and `mesh` contains the original mesh (depending on the situation these subfolders may contian smb and vtk files for the curved cavity and the curved cavity wireframe, the corresponding linear cavity and the entity itself) 
 
 # Visualizing the Cavities
