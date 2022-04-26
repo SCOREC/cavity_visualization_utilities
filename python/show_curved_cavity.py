@@ -4,6 +4,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-r', '--root_dir', help="root directory of all cavities")
 parser.add_argument('-c', '--cavity_name', help="the specific cavity name")
 parser.add_argument('-p', '--save_png', help="saves a png of the view", action="store_true")
+parser.add_argument('-m', '--show_mesh', help="show mesh", action="store_true")
 args = parser.parse_args()
 
 # construct the mesh_path
@@ -132,29 +133,29 @@ from paraview.simple import *
 paraview.simple._DisableFirstRenderCameraReset()
 
 
-# create a new 'XML Unstructured Grid Reader'
-order_3_0vtu = XMLUnstructuredGridReader(FileName=[mesh_path])
-order_3_0vtu.PointArrayStatus = ['detJacobian']
-
 # get active view
 renderView1 = GetActiveViewOrCreate('RenderView')
 # uncomment following to set a specific view size
 # renderView1.ViewSize = [1994, 1260]
 
-# show data in view
-order_3_0vtuDisplay = Show(order_3_0vtu, renderView1)
-# trace defaults for the display properties.
-order_3_0vtuDisplay.ColorArrayName = [None, '']
-order_3_0vtuDisplay.DiffuseColor = [1,1,1]
-order_3_0vtuDisplay.EdgeColor = [0.0, 0.0, 0.2]
-order_3_0vtuDisplay.BackfaceDiffuseColor = [1,1,1]
-order_3_0vtuDisplay.ScalarOpacityUnitDistance = 0.05
+if args.show_mesh:
+  # create a new 'XML Unstructured Grid Reader'
+  order_3_0vtu = XMLUnstructuredGridReader(FileName=[mesh_path])
+  order_3_0vtu.PointArrayStatus = ['detJacobian']
+  # show data in view
+  order_3_0vtuDisplay = Show(order_3_0vtu, renderView1)
+  # trace defaults for the display properties.
+  order_3_0vtuDisplay.ColorArrayName = [None, '']
+  order_3_0vtuDisplay.DiffuseColor = [1,1,1]
+  order_3_0vtuDisplay.EdgeColor = [0.0, 0.0, 0.2]
+  order_3_0vtuDisplay.BackfaceDiffuseColor = [1,1,1]
+  order_3_0vtuDisplay.ScalarOpacityUnitDistance = 0.05
 
-# reset view to fit data
-renderView1.ResetCamera()
+  # reset view to fit data
+  renderView1.ResetCamera()
 
-# Properties modified on order_3_0vtuDisplay
-order_3_0vtuDisplay.Opacity = 0.05
+  # Properties modified on order_3_0vtuDisplay
+  order_3_0vtuDisplay.Opacity = 0.05
 
 # create a new 'XML Unstructured Grid Reader'
 order_3_0vtu_1 = XMLUnstructuredGridReader(FileName=[cavity_path])
@@ -208,17 +209,6 @@ entity_curved_wirepvtuDisplay.DiffuseColor = [1., 0.0, 0.0]
 
 # Properties modified on entity_curved_wirepvtuDisplay
 entity_curved_wirepvtuDisplay.LineWidth = 3.0
-
-# hide data in view
-Hide(order_3_0vtu, renderView1)
-
-# set active source
-SetActiveSource(order_3_0vtu)
-
-# show data in view
-order_3_0vtuDisplay = Show(order_3_0vtu, renderView1)
-
-#### saving camera placements for all active views
 
 # current camera placement for renderView1
 renderView1.CameraPosition = [0.6710013769621432, -2.2271728114780966, 1.4479305503461593]
