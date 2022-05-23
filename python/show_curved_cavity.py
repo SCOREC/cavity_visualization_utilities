@@ -238,10 +238,7 @@ entity_curved_wirepvtuDisplay.DiffuseColor = [1., 0.0, 0.0]
 entity_curved_wirepvtuDisplay.LineWidth = 3.0
 
 # current camera placement for renderView1
-renderView1.CameraPosition = [0.6710013769621432, -2.2271728114780966, 1.4479305503461593]
-renderView1.CameraFocalPoint = [-0.03598978194513412, -0.03951699619474098, -0.0896753010948714]
-renderView1.CameraViewUp = [-0.16063543985271023, 0.5322885008784687, 0.8311830167272903]
-renderView1.CameraParallelScale = 0.7158537199797246
+renderView1.ResetCamera()
 
 #### uncomment the following to render all views
 if args.save_png:
